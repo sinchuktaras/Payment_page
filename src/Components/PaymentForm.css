@@ -1,0 +1,89 @@
+.payment-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 32px;
+    font-family: sans-serif;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    box-sizing: border-box;
+  }
+  
+  .apple-pay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    margin: 20px 0;
+    position: relative;
+    box-sizing: border-box;
+  }
+  
+  .apple-logo {
+    position: relative;
+    top: -1.5px; /* Minor adjustment of the logo position */
+    right: -5px; 
+    display: inline-block;
+  }
+  
+  .or {
+    text-align: center;
+    color: gray;
+  }
+  
+  form {
+    width: 100%;
+  }
+  
+  form input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  .inline-fields {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+  }
+  
+  .pay-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background-color: hsl(144, 97%, 27%);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-sizing: border-box;
+  }
+  
+  .pay-btn:hover {
+    background-color: hsl(144, 97%, 31%);
+  }
+  
+  .message {
+    margin-top: 10px;
+    font-weight: bold;
+    color: green;
+  }
+  
+  .info {
+    margin-top: 20px;
+    font-size: 12px;
+    color: gray;
+  }
