@@ -1,5 +1,5 @@
 import React from "react";
-import PaymentForm from "./Components/PaymentForm";
+import PaymentForm from "./Components/CheckoutPage";
 
 function App() {
   return (
