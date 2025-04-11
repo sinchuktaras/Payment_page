@@ -7,27 +7,24 @@
     font-family: sans-serif;
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
   }
   
   .checkout-container {
     display: flex;
     gap: 40px;
     width: 100%;
-    justify-content: center; 
+    justify-content: center;
+    align-items: flex-start; /* Додаємо це! Вирівнює блоки по верхньому краю */
   }
+  
   
   .payment-section {
     flex: 0 1 420px; /* Changed from flex: 1 to prevent stretching */
     max-width: 420px;
   }
   
-  .summary-section {
-    flex: 0 1 380px; /* Changed from flex: 1 to prevent stretching */
-    max-width: 380px;
-    padding-top: 80px; /* To align with the form content */
-  }
-  
+
   .powered-by {
     width: 100%;
     text-align: right;

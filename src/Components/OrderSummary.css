@@ -1,72 +1,75 @@
 .order-summary {
-    border-radius: 8px;
-    padding: 16px;
-    margin-bottom: 20px;
-    background-color: #f9f9f9;
-    font-family: sans-serif;
-  }
-  
-  .order-summary h3 {
-    font-size: 16px;
-    margin-top: 0;
-    margin-bottom: 12px;
-    font-weight: 500;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .char-limit {
-    color: #888;
-    font-size: 14px;
-    font-weight: normal;
-  }
-  
-  .description-section {
-    margin-top: 12px;
-  }
-  
-  .description-label {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
-    font-size: 14px;
-    color: #333;
-  }
-  
-  .product-info {
-    background-color: white;
-    border-radius: 6px;
-    padding: 12px 16px;
-    margin-bottom: 12px;
-  }
-  
-  .product-name {
-    font-weight: 500;
-    margin: 0 0 4px 0;
-    font-size: 14px;
-  }
-  
-  .product-description {
-    color: #888;
-    margin: 0;
-    font-size: 13px;
-    font-style: italic;
-  }
-  
-  .price-summary {
-    margin-top: 16px;
-  }
-  
-  .free-trial {
-    font-weight: 500;
-    margin: 0;
-    font-size: 14px;
-  }
-  
-  .price-details {
-    color: #555;
-    margin: 4px 0 0 0;
-    font-size: 13px;
-  }
+  border-radius: 10px;
+  padding: 24px;
+  background-color: #f8f9fb; /* тепер увесь блок сірий */
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Заголовок */
+.order-summary h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #222;
+}
+
+.order-description-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin: -12px 0 16px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.char-limit {
+  font-weight: normal;
+  color: #888;
+}
+
+.product-info {
+  padding: 0;
+  margin-bottom: 20px;
+  border-top: 1px solid #e0e0e0; /* верхня роздільна лінія */
+  padding-top: 16px;
+}
+
+.product-name {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 6px 0;
+  color: #333;
+}
+
+.product-description {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+/* Нижня роздільна лінія */
+.price-summary {
+  padding-top: 16px;
+  border-top: 1px solid #e0e0e0;
+  text-align: right;
+}
+
+.free-trial {
+  font-size: 15px;
+  font-weight: 600;
+  color: #000;
+  margin: 0 0 4px 0;
+}
+
+.price-details {
+  font-size: 14px;
+  color: #444;
+  margin: 0;
+}
+
+/*
+.price-amount {
+  font-weight: 600;
+  color: #000;
+}
+*/
