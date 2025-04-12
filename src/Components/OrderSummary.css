@@ -12,13 +12,14 @@
   margin-bottom: 20px;
   font-weight: 600;
   color: #222;
+  margin-top: 10px;
 }
 
 .order-description-label {
   font-size: 14px;
   font-weight: 600;
   color: #333;
-  margin: -12px 0 16px 0;
+  margin: 4px 0 16px 0; /* Changed from -12px to 4px for top margin */
   display: flex;
   justify-content: space-between;
 }

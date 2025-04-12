@@ -4,10 +4,10 @@ import "./OrderSummary.css";
 const OrderSummary = ({ productName, productDescription, price, duration }) => {
   return (
     <div className="order-summary">
-      <h3>Order Summary</h3>
+      <h3>Order Summary ≤ 100 char</h3>
 
       <p className="order-description-label">
-        Order Description <span className="char-limit">≤ 400 char.</span>
+        Order Description ≤ 400 char
       </p>
 
       <div className="product-info">
