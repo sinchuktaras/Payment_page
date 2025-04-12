@@ -1,4 +1,16 @@
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;     /* Center vertically */
+}
+
 .payment-container {
+  position: relative;
   max-width: 400px;
   margin: 0 auto;
   padding: 32px;
@@ -226,4 +238,37 @@ form input {
 
 .apple-pay i {
   font-size: 17px;
+}
+
+.language-switcher-container {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 10;
+}
+
+/* Style the language switcher buttons */
+.language-switcher {
+  display: flex;
+  gap: 8px;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  transition: all 0.2s ease;
+}
+
+.lang-btn:hover {
+  color: #464545;
+}
+
+.lang-btn.active {
+  background-color: #f0f0f0;
+  border-color: #c0c0c0;
+  font-weight: bold;
 }
