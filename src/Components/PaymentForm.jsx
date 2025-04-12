@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import "./PaymentForm.css";
+import { useTranslation } from "../TranslationContext";
 
 const PaymentForm = () => {
+  // Add the translation hook directly in the component
+  const { t } = useTranslation();
   const [cardNumber, setCardNumber] = useState("");
   const [expiry, setExpiry] = useState("");
   const [cvc, setCvc] = useState("");
@@ -65,25 +68,25 @@ const PaymentForm = () => {
     
     // Validate card number
     if (!cardNumber || cardNumber.replace(/\s/g, '').length !== 16) {
-      newErrors.cardNumber = "Please enter a valid 16-digit card number";
+      newErrors.cardNumber = t('cardNumberError');
       isValid = false;
     }
     
     // Validate expiry
     if (!expiry || expiry.length !== 5) {
-      newErrors.expiry = "Please enter a valid expiry date (MM/YY)";
+      newErrors.expiry = t('expiryError');
       isValid = false;
     } else {
       const [month, year] = expiry.split('/');
       if (parseInt(month) < 1 || parseInt(month) > 12) {
-        newErrors.expiry = "Month must be between 01-12";
+        newErrors.expiry = t('monthError');
         isValid = false;
       }
     }
     
     // Validate CVC
     if (!cvc || cvc.length !== 3) {
-      newErrors.cvc = "CVC must be 3 digits";
+      newErrors.cvc = t('cvcError');
       isValid = false;
     }
     
@@ -123,8 +126,8 @@ const PaymentForm = () => {
       </div>
       
       <div className="pricing-info">
-        <h3>5 days free</h3>
-        <p>then 299.99 UAH per 14 days</p>
+        <h3>{t('freeTrial')}</h3>
+        <p> {t('price')} </p>
       </div>
 
       <button className="apple-pay">
@@ -133,12 +136,12 @@ const PaymentForm = () => {
       </button>
 
       <div className="divider">
-        <span>or pay with card</span>
+        <span>{t('or')}</span>
       </div>
 
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label>Card Number</label>
+          <label>{t('cardNumber')}</label>
           <input
             type="text"
             placeholder="1234 1234 1234 1234"
@@ -151,7 +154,7 @@ const PaymentForm = () => {
         
         <div className="inline-fields">
           <div className="form-group">
-            <label>Expiration Date</label>
+            <label>{t('expDate')}</label>
             <input
               type="text"
               placeholder="MM/YY"
@@ -162,7 +165,7 @@ const PaymentForm = () => {
             {errors.expiry && <div className="error-message">{errors.expiry}</div>}
           </div>
           <div className="form-group">
-            <label>CVC</label>
+            <label>{t('cvc')}</label>
             <div className="cvc-container">
               <input
                 type="text"
@@ -183,10 +186,10 @@ const PaymentForm = () => {
           {isProcessing ? (
             <>
               <span className="spinner"></span>
-              Processing payment
+              {t('paymentProccessing')}
             </>
           ) : (
-            "Pay 299.99 UAH"
+            t('pay299')
           )}
         </button>
       </form>
@@ -195,9 +198,11 @@ const PaymentForm = () => {
 
       <div className="info-box">
         <p className="info">
-          You'll have your <span className="semi-bold">Plan Pro during 1 year</span>. After this period of time, 
-          your plan will be <span className="semi-bold">automatically renewed</span> with its original price 
-          without any discounts applied.
+          {t('disclaimerPart1')}
+            <span className="semi-bold">{t('disclaimerSB1')}</span>
+          {t('disclaimerPart2')}
+            <span className="semi-bold">{t('disclaimerSB2')}</span>
+          {t('disclaimerPart3')}
         </p>
       </div>
     </div>
