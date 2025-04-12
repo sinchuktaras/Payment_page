@@ -16,7 +16,6 @@
   color: #333;
   margin-right: 10px;
   cursor: pointer;
-  margin-left: -35px;
 }
 
 .checkout-header h2 {
@@ -41,32 +40,6 @@
   font-size: 16px;
   color: #666;
   margin: 0;
-}
-
-.apple-pay {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  background-color: #000;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 12px 24px;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  width: 100%;
-  margin: 20px 0;
-  position: relative;
-  box-sizing: border-box;
-}
-
-.apple-logo {
-  position: relative;
-  top: -1.5px;
-  right: -5px; 
-  display: inline-block;
 }
 
 .divider {
@@ -151,28 +124,52 @@ form input {
   font-size: 16px;
 }
 
+/* Pay button states */
 .pay-btn {
   width: 100%;
   padding: 14px;
   margin-top: 16px;
-  background-color: #00a152;
+  background-color: hsl(144, 97%, 27%); /* Default state */
   color: white;
   font-weight: 500;
   font-size: 16px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background 0.3s ease;
   box-sizing: border-box;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  position: relative;
 }
 
 .pay-btn:hover {
-  background-color: #008f49;
+  background-color: hsl(144, 97%, 31%); /* Hover state with increased lightness */
+  transform: translateY(2px); /* Y offset 2px */
+}
+
+.pay-btn:active {
+  background-color: hsl(144, 97%, 27%); /* Pressed state */
 }
 
 .pay-btn:disabled {
-  background-color: #ccc;
+  background-color: hsl(144, 97%, 27%); /* Processing state */
   cursor: not-allowed;
+}
+
+/* Spinner animation for processing state */
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
 .message {
@@ -185,9 +182,16 @@ form input {
 .info-box {
   margin-top: 24px;
   padding: 16px;
-  background-color: #ffffff;
+  background-color: #f9f9f9;
   border-radius: 8px;
   border: 1px solid #eee;
+}
+
+.info {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
 }
 
 .error {
@@ -204,9 +208,22 @@ form input {
   font-weight: 600;
 }
 
-.info {
-  margin: 0;
-  font-size: 14px;
-  color: #666;
-  line-height: 1.5;
+.apple-pay {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.apple-pay i {
+  font-size: 17px;
 }

@@ -1,0 +1,20 @@
+{
+    "checkout": "Checkout",
+    "freeTrial": "5 days free",
+    "price": "then 299.99 UAH per 14 days",
+    "pay": "Pay 299.99 UAH",
+    "orderInfo": "Order info <= 100 char.",
+    "description": "Description <= 400 char.",
+    "productName": "Lamel Professional Smart Skin Compact Powder",
+    "productSubtitle": "Face powder",
+    "language": {
+      "eng": "Eng",
+      "ukr": "Укр"
+    },
+    "cardNumber": "Card Number",
+    "expDate": "Expiration Date",
+    "cvc": "CVC",
+    "or": "or pay with card",
+    "disclaimer": "You'll have your Plan Pro during 1 year. After this period of time, your plan will be automatically renewed with its original price without any discounts applied."
+  }
+  
