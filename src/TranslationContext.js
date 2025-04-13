@@ -1,8 +1,11 @@
-
-// TranslationContext.js
 import React, { createContext, useState, useContext, useEffect } from 'react';
 
-// Your existing translations
+/**
+ * Translation data object 
+ */
+
+// This object contains translations for English and Ukrainian languages
+// Key-value pairs for translation strings:
 const translations = {
   en: {
     translation: {
@@ -64,10 +67,17 @@ const translations = {
   }
 };
 
-// Create the context
+// Create the context for translations
 const TranslationContext = createContext();
 
-// Create a provider component
+/**
+ * TranslationProvider Component
+ * 
+ * Provides translation functionality to the entire application.
+ * Manages language selection and persistence through localStorage.
+ * 
+ * @param {ReactNode} children - Child components that will have access to translation context
+ */
 export function TranslationProvider({ children }) {
   // Get saved language or default to English
   const [language, setLanguage] = useState(() => {
@@ -78,18 +88,22 @@ export function TranslationProvider({ children }) {
   // Update localStorage when language changes
   useEffect(() => {
     localStorage.setItem('language', language);
-    // Update the document's lang attribute
+    // Update the document's lang attribute for accessibility
     document.documentElement.lang = language;
   }, [language]);
 
-  // Function to change the language
+  /**
+   * Changes the current language if it exists in available translations
+   */
   const changeLanguage = (lang) => {
     if (translations[lang]) {
       setLanguage(lang);
     }
   };
 
-  // Get text in current language
+  /**
+   * Retrieves translated text for a given key in the current language
+   */
   const t = (key) => {
     return translations[language]?.translation?.[key] || key;
   };
@@ -101,7 +115,9 @@ export function TranslationProvider({ children }) {
   );
 }
 
-// Custom hook to use the translation context
+/**
+ * Custom hook to use the translation context
+ */
 export function useTranslation() {
   const context = useContext(TranslationContext);
   if (context === undefined) {
@@ -110,7 +126,12 @@ export function useTranslation() {
   return context;
 }
 
-// LanguageSwitcher.js - Component for language switching buttons
+/**
+ * LanguageSwitcher Component
+ * 
+ *Component (basically two buttons) that allows users to switch between available languages.
+ * Shows active state for the currently selected language.
+ */
 export function LanguageSwitcher() {
   const { language, changeLanguage } = useTranslation();
   

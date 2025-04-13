@@ -29,7 +29,6 @@
   position: relative;
 }
 
-/* Language switcher styles for desktop */
 .language-switcher-container {
   position: absolute;
   top: -30px;
@@ -42,6 +41,7 @@
   gap: 4px;
 }
 
+/* States of language switchers*/
 .lang-btn {
   background: none;
   border: none;
@@ -49,18 +49,19 @@
   cursor: pointer;
   font-size: 14px;
   transition: color 0.2s ease;
-  color: #CCCCCC; 
+  color: #CCCCCC; /* Basic */
 }
 
 .lang-btn:hover {
-  color: #999999; 
+  color: #999999; /* Hover */
 }
 
 .lang-btn.active {
   background: none;
-  color: #333333; /* Dark gray/almost black for active language */
+  color: #333333; /* When active (Lang is being used on the page) */
 }
 
+/* Bottom line */
 .powered-by-container {
   text-align: center;
   margin-top: 20px;

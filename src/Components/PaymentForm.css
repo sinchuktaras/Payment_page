@@ -9,6 +9,7 @@ body {
   align-items: center;    
 }
 
+
 .payment-container {
   position: relative;
   max-width: 420px;
@@ -130,8 +131,8 @@ form input {
   border: none;
   cursor: pointer;
   padding: 0;
-  font-size: 20px; /* Adjust size as needed */
-  color: #C5C9D0; /* Light gray color matching the image */
+  font-size: 20px; 
+  color: #C5C9D0; 
 }
 
 .info-icon {
@@ -175,7 +176,7 @@ form input {
 
 .pay-btn:hover {
   background-color: hsl(144, 97%, 31%); /* Hover state with increased lightness */
-  transform: translateY(2px); /* Y offset 2px */
+  transform: translateY(2px); 
 }
 
 .pay-btn:active {

@@ -1,12 +1,11 @@
 .order-summary {
   border-radius: 10px;
   padding: 24px;
-  background-color: #f7f7f9; /* тепер увесь блок сірий */
+  background-color: #f7f7f9; 
   font-family: 'Segoe UI', sans-serif;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* Заголовок */
 .order-summary h3 {
   font-size: 18px;
   margin-bottom: 20px;
@@ -19,7 +18,7 @@
   font-size: 14px;
   font-weight: 600;
   color: #333;
-  margin: 4px 0 16px 0; /* Changed from -12px to 4px for top margin */
+  margin: 4px 0 16px 0; 
   display: flex;
   justify-content: space-between;
 }
@@ -28,10 +27,11 @@
   color: #888;
 }
 
+/* Under the upper line*/
 .product-info {
   padding: 0;
   margin-bottom: 20px;
-  border-top: 1px solid #e0e0e0; /* верхня роздільна лінія */
+  border-top: 1px solid #e0e0e0; 
   padding-top: 16px;
 }
 
@@ -48,7 +48,7 @@
   margin: 0;
 }
 
-/* Нижня роздільна лінія */
+/* Under bottom line */
 .price-summary {
   padding-top: 16px;
   border-top: 1px solid #e0e0e0;

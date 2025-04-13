@@ -2,25 +2,35 @@ import React, { useState } from "react";
 import "./PaymentForm.css";
 import { useTranslation } from "../TranslationContext";
 
+/**
+ * PaymentForm Component
+ * 
+ * This component handles the credit card payment form functionality including
+ * validation, formatting, and submission processing.
+ */
 const PaymentForm = () => {
-  // Add the translation hook directly in the component
   const { t } = useTranslation();
+  
   const [cardNumber, setCardNumber] = useState("");
   const [expiry, setExpiry] = useState("");
   const [cvc, setCvc] = useState("");
   const [isProcessing, setIsProcessing] = useState(false);
   const [message, setMessage] = useState("");
   const [showCvcInfo, setShowCvcInfo] = useState(false);
+  
   const toggleCvcInfo = () => {
     setShowCvcInfo(!showCvcInfo);
   };
+  
   const [errors, setErrors] = useState({
     cardNumber: "",
     expiry: "",
     cvc: ""
   });
 
-  // Card number validation
+  /**
+   * Constanst below handle the card info input, with formating and validation
+   */
   const handleCardNumberChange = (e) => {
     const value = e.target.value.replace(/\D/g, ''); // Remove non-digits
     
@@ -33,7 +43,6 @@ const PaymentForm = () => {
     }
   };
 
-  // Expiry validation
   const handleExpiryChange = (e) => {
     let value = e.target.value.replace(/\D/g, ''); // Remove non-digits
     
@@ -53,7 +62,6 @@ const PaymentForm = () => {
     }
   };
 
-  // CVC validation
   const handleCvcChange = (e) => {
     const value = e.target.value.replace(/\D/g, ''); // Remove non-digits
     
@@ -66,6 +74,10 @@ const PaymentForm = () => {
     }
   };
 
+  /**
+   * Validates all form fields before submission
+   * @returns {boolean} True if form is valid, false otherwise
+   */
   const validateForm = () => {
     const newErrors = {};
     let isValid = true;
@@ -98,6 +110,10 @@ const PaymentForm = () => {
     return isValid;
   };
 
+  /**
+   * Handles form submission
+   * Simulates payment processing with timeout
+   */
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -108,11 +124,11 @@ const PaymentForm = () => {
     setIsProcessing(true);
     setMessage("");
 
-    // Payment processing simulation
     setTimeout(() => {
       setIsProcessing(false);
       setMessage(t('paymentSuccess'));
-      // Clear fields
+      
+      // Clear fields after successful payment
       setCardNumber("");
       setExpiry("");
       setCvc("");
@@ -121,6 +137,7 @@ const PaymentForm = () => {
 
   return (
     <div className="payment-container">
+      {/* Header with back button */}
       <div className="checkout-header">
         <svg className="back-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M19 12H5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -129,20 +146,24 @@ const PaymentForm = () => {
         <h2>Checkout</h2>
       </div>
       
+      {/* Pricing information */}
       <div className="pricing-info">
         <h3><span className="semi-bold"> {t('freeTrial')} </span></h3>
         <p> {t('price')} </p>
       </div>
 
+      {/* Apple Pay button */}
       <button className="apple-pay">
         <i className="fab fa-apple"></i>
         <span>Pay</span>
       </button>
 
+      {/* Divider between payment options */}
       <div className="divider">
         <span>{t('or')}</span>
       </div>
 
+      {/* Credit card payment form */}
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>{t('cardNumber')}</label>
@@ -156,6 +177,7 @@ const PaymentForm = () => {
           {errors.cardNumber && <div className="error-message">{errors.cardNumber}</div>}
         </div>
         
+        {/* Inline fields for expiry and CVC */}
         <div className="inline-fields">
           <div className="form-group">
             <label>{t('expDate')}</label>
@@ -179,6 +201,7 @@ const PaymentForm = () => {
                 className={errors.cvc ? "error" : ""}
               />
 
+              {/* CVC help tooltip */}
               <div className="info-button-container">
                 <button type="button" className="info-button" onClick={toggleCvcInfo}>
                   <i className="fas fa-info-circle"></i>
@@ -194,6 +217,7 @@ const PaymentForm = () => {
           </div>
         </div>
         
+        {/* Submit button with loading state */}
         <button className="pay-btn" type="submit" disabled={isProcessing}>
           {isProcessing ? (
             <>
@@ -206,8 +230,10 @@ const PaymentForm = () => {
         </button>
       </form>
 
+      {/* Success/error message display */}
       {message && <p className="message">{message}</p>}
 
+      {/* Subscription information disclaimer */}
       <div className="info-box">
         <p className="info">
           {t('disclaimerPart1')}
