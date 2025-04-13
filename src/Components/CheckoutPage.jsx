@@ -28,6 +28,11 @@ const CheckoutPage = () => {
           />
         </div>
       </div>
+
+      {/* Powered by Solid */}
+      <div className="powered-by-container">
+        <p className="powered-by-text">Powered by <span className="solid-text">Solid</span></p>
+      </div>
     </div>
   );
 };

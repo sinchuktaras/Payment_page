@@ -10,6 +10,10 @@ const PaymentForm = () => {
   const [cvc, setCvc] = useState("");
   const [isProcessing, setIsProcessing] = useState(false);
   const [message, setMessage] = useState("");
+  const [showCvcInfo, setShowCvcInfo] = useState(false);
+  const toggleCvcInfo = () => {
+    setShowCvcInfo(!showCvcInfo);
+  };
   const [errors, setErrors] = useState({
     cardNumber: "",
     expiry: "",
@@ -107,7 +111,7 @@ const PaymentForm = () => {
     // Payment processing simulation
     setTimeout(() => {
       setIsProcessing(false);
-      setMessage("✅ Payment successful! Thank you.");
+      setMessage(t('paymentSuccess'));
       // Clear fields
       setCardNumber("");
       setExpiry("");
@@ -126,7 +130,7 @@ const PaymentForm = () => {
       </div>
       
       <div className="pricing-info">
-        <h3>{t('freeTrial')}</h3>
+        <h3><span className="semi-bold"> {t('freeTrial')} </span></h3>
         <p> {t('price')} </p>
       </div>
 
@@ -174,9 +178,17 @@ const PaymentForm = () => {
                 onChange={handleCvcChange}
                 className={errors.cvc ? "error" : ""}
               />
-              <button type="button" className="info-button">
-                <span className="info-icon">ⓘ</span>
-              </button>
+
+              <div className="info-button-container">
+                <button type="button" className="info-button" onClick={toggleCvcInfo}>
+                  <i className="fas fa-info-circle"></i>
+                </button>
+                {showCvcInfo && (
+                  <span className="info-tooltip">
+                    {t('cvcHelp')}
+                  </span>
+                )}
+              </div>
             </div>
             {errors.cvc && <div className="error-message">{errors.cvc}</div>}
           </div>
@@ -186,7 +198,7 @@ const PaymentForm = () => {
           {isProcessing ? (
             <>
               <span className="spinner"></span>
-              {t('paymentProccessing')}
+              {t('paymentProcessing')}
             </>
           ) : (
             t('pay299')

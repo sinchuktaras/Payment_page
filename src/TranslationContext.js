@@ -24,12 +24,13 @@ const translations = {
       disclaimerSB2: "automatically renewed ",
       disclaimerPart3: "with its original price without any discounts applied.",
       paymentProcessing: "Processing payment",
-      paymentSuccess: "Payment successful",
+      paymentSuccess: "✔ Payment successful! Thank you.",
       pay299: "Pay 299.99 UAH",
       cardNumberError: "Please enter a valid 16-digit card number",
       expiryError: "Please enter a valid expiry date (MM/YY)",
       monthError: "Month must be between 01-12",
-      cvcError: "CVC must be 3 digits"
+      cvcError: "CVC must be 3 digits",
+      cvcHelp: "CVC is the 3-digit security code on the back of your card"
     }
   },
   uk: {
@@ -52,12 +53,13 @@ const translations = {
       disclaimerSB2: "автоматично поновлений ",
       disclaimerPart3: "за початковою ціною без знижок.",
       paymentProcessing: "Обробка платежу",
-      paymentSuccess: "Платіж успішний",
+      paymentSuccess: "✔ Дякуємо! Платіж успішний.",
       pay299: "Сплатити 299.99 грн",
       cardNumberError: "Будь ласка, введіть дійсний 16-значний номер картки",
       expiryError: "Будь ласка, введіть дійсну дату закінчення терміну дії (ММ/РР)",
       monthError: "Місяць має бути між 01-12",
-      cvcError: "CVC має бути 3 цифри"
+      cvcError: "CVC має бути 3 цифри",
+      cvcHelp: "CVC - це 3-значний код безпеки на звороті картки"
     }
   }
 };

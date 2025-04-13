@@ -49,14 +49,30 @@
   cursor: pointer;
   font-size: 14px;
   transition: color 0.2s ease;
-  color: #CCCCCC; /* Light gray color for inactive language */
+  color: #CCCCCC; 
 }
 
 .lang-btn:hover {
-  color: #999999; /* Slightly darker on hover */
+  color: #999999; 
 }
 
 .lang-btn.active {
   background: none;
   color: #333333; /* Dark gray/almost black for active language */
+}
+
+.powered-by-container {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 10px;
+}
+
+.powered-by-text {
+  font-size: 14px;
+  color: #757575;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.solid-text {
+  font-weight: 500;
 }
