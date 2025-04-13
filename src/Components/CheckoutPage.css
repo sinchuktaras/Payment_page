@@ -1,89 +1,62 @@
 .checkout-page {
-    width: 100%;
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 20px;
-    box-sizing: border-box;
-    font-family: sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-  }
-  
-  .checkout-container {
-    display: flex;
-    gap: 40px;
-    width: 100%;
-    justify-content: center;
-    align-items: flex-start; /* Додаємо це! Вирівнює блоки по верхньому краю */
-    position: relative;
-  }
-  
-  
-  .payment-section {
-    flex: 0 1 420px; /* Changed from flex: 1 to prevent stretching */
-    max-width: 420px;
-  }
-  
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
 
-  .powered-by {
-    width: 100%;
-    text-align: right;
-    color: #666;
-    font-size: 12px;
-    margin-top: 20px;
-    padding-right: 20px; /* Add some padding on the right */
-  }
-  
-  @media (max-width: 768px) {
-    .checkout-container {
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .payment-section,
-    .summary-section {
-      max-width: 100%;
-      width: 100%;
-    }
-    
-    .summary-section {
-      padding-top: 0;
-      position: relative;
-    }
+.checkout-container {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+}
 
-    .language-switcher-container {
-      position: absolute;
- 
-      right: 15px;
-      z-index: 10;
-    }
-    
-    /* Style the language switcher buttons */
-    .language-switcher {
-      display: flex;
-      gap: 8px;
-    }
-    
-    .lang-btn {
-      background: none;
-      border: 1px solid #e0e0e0;
-      border-radius: 4px;
-      padding: 5px 10px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: all 0.2s ease;
-    }
-    
-    .lang-btn:hover {
-      background-color: #f5f5f5;
-    }
-    
-    .lang-btn.active {
-      background-color: #f0f0f0;
-      border-color: #c0c0c0;
-      font-weight: bold;
-    }
+.payment-section {
+  flex: 0 1 420px;
+  max-width: 420px;
+}
 
-  }
+.summary-section {
+  position: relative;
+}
+
+/* Language switcher styles for desktop */
+.language-switcher-container {
+  position: absolute;
+  top: -30px;
+  right: 0;
+  z-index: 10;
+}
+
+.language-switcher {
+  display: flex;
+  gap: 4px;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  padding: 5px 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: color 0.2s ease;
+  color: #CCCCCC; /* Light gray color for inactive language */
+}
+
+.lang-btn:hover {
+  color: #999999; /* Slightly darker on hover */
+}
+
+.lang-btn.active {
+  background: none;
+  color: #333333; /* Dark gray/almost black for active language */
+}
